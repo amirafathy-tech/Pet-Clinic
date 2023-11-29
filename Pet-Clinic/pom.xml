@@ -4,12 +4,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.0</version>
+<!--        <version>3.2.0</version>-->
+        <version>3.2.1-SNAPSHOT</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.example</groupId>
     <artifactId>Pet-Clinic</artifactId>
-    <version>0.0.1</version>
+<!--    <version>0.0.1</version>-->
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Pet-Clinic</name>
     <description>Pet-Clinic</description>
@@ -19,22 +21,50 @@
         <module>pet-clinic-data</module>
     </modules>
     <properties>
-        <java.version>11</java.version>
+<!--        <java.version>11</java.version>-->
+        <java.version>17</java.version>
     </properties>
     <dependencies>
 
-
-
-
-
     </dependencies>
+
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+
+<!--                <configuration>-->
+<!--                    <excludes>-->
+<!--                        <exclude>-->
+<!--                            <groupId>org.projectlombok</groupId>-->
+<!--                            <artifactId>lombok</artifactId>-->
+<!--                        </exclude>-->
+<!--                    </excludes>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-release-plugin</artifactId>-->
+<!--                <version>2.3.2</version>-->
+
+<!--              <configuration>-->
+<!--                  <goals>install</goals>-->
+<!--                  <autoVersionSubmodules>true</autoVersionSubmodules>-->
+<!--              </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
+<!--    <scm>-->
+<!--        <developerConnection>scm:git:https://github.com/amirafathy-tech/Pet-Clinic.git</developerConnection>-->
+<!--      <tag>Pet-Clinic-0.0.1</tag>-->
+<!--  </scm>-->
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-
                 <configuration>
                     <excludes>
                         <exclude>
@@ -47,18 +77,56 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.3.2</version>
-
-              <configuration>
-                  <goals>install</goals>
-                  <autoVersionSubmodules>true</autoVersionSubmodules>
-              </configuration>
+                <version>3.0.1</version>
+                <configuration>
+                    <goals>install</goals>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
     <scm>
         <developerConnection>scm:git:https://github.com/amirafathy-tech/Pet-Clinic.git</developerConnection>
-      <tag>Pet-Clinic-0.0.1</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
 </project>

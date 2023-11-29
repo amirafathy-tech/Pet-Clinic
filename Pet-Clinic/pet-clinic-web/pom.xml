@@ -4,19 +4,29 @@
     <parent>
         <groupId>org.example</groupId>
         <artifactId>Pet-Clinic</artifactId>
-        <version>0.0.1</version>
+<!--        <version>0.0.1</version>-->
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.example1</groupId>
+<!--    <groupId>org.example1</groupId>-->
     <artifactId>pet-clinic-web</artifactId>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+<!--        <maven.compiler.source>21</maven.compiler.source>-->
+<!--        <maven.compiler.target>21</maven.compiler.target>-->
+
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>pet-clinic-data</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+
+        </dependency>
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-actuator</artifactId>
@@ -46,6 +56,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
