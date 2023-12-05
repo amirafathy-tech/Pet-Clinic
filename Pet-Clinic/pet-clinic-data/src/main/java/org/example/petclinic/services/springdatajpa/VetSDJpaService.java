@@ -49,8 +49,4 @@ public class VetSDJpaService implements VetService {
         vetRepository.deleteById(aLong);
     }
 
-    @Override
-    public void deleteByID(Long aLong) {
-        vetRepository.deleteById(aLong);
-    }
 }
