@@ -1,15 +1,32 @@
 package org.example.petclinic.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 
 @Entity
 @Table(name = "pet")
 
 public class Pet extends BaseEntity{
+//    @Builder
+//    public Pet(Long id, String name, PetType petType, Owner owner, LocalDate birthDate, Set<Visit> visit) {
+//        super(id);
+//        this.name = name;
+//        this.petType = petType;
+//        this.owner = owner;
+//        this.birthDate = birthDate;
+//        this.visit=visit;
+//    }
     @Column(name = "name")
     private String name;
     @ManyToOne
@@ -22,45 +39,4 @@ public class Pet extends BaseEntity{
     private LocalDate birthDate;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visit= new HashSet<>();
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public PetType getPetType() {
-        return petType;
-    }
-
-    public void setPetType(PetType petType) {
-        this.petType = petType;
-    }
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-
-
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public Set<Visit> getVisit() {
-        return visit;
-    }
-
-    public void setVisit(Set<Visit> visit) {
-        this.visit = visit;
-    }
 }

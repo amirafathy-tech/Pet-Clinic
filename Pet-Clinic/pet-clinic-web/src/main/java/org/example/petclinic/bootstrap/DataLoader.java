@@ -61,6 +61,8 @@ public class DataLoader implements CommandLineRunner {
         owner1.setCity("Alex");
         owner1.setTelephone("1234567");
 
+//        Owner.builder().address("ASFD").id(3).firstName().build();
+
         Pet mikesPet=new Pet();
         mikesPet.setPetType(savedDog);
         mikesPet.setOwner(owner1);
